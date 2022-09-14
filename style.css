@@ -1,0 +1,45 @@
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.have-phone-box {
+  display: none;
+}
+
+.many-pet-box {
+  display: none;
+}
+
+.kind-pet-box {
+  display: none;
+}
+
+.phone-brand-box {
+  display: none;
+}
+
+.pet-name-box {
+  display: none;
+}
+
+.best-phone-box {
+  display: none;
+}
+
+.bt-submit {
+  display: none;
+}
+
+.rel {
+  animation: rotat 600ms linear infinite;
+}
+
+@keyframes rotat {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
