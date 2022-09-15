@@ -1,3 +1,4 @@
+<?php var_dump($_POST); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +17,7 @@
         <h1 class="my-5 text-center">
             Demo Questionaire Using Google Sheet As Database
         </h1>
-        <!-- <form method="POST" action=""> -->
+        <!-- <form method="POST" action="" id="my-form"> -->
         <form id="my-form" method="POST"
             action="https://script.google.com/macros/s/AKfycbzcM5mWttxYQA8mHgnIJP90lr8QFFyik4V-iXki-r6Hx6MaJaRzqBsuW6wCbwxujX4/exec">
             <div class="row mb-3">

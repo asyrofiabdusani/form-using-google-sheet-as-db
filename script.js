@@ -127,12 +127,13 @@ bstPhone.addEventListener('input', () => {
     btSubmit.style.display = 'block';
 });
 
-btSubmit.addEventListener('click', () => {
-    btSubmit.innerHTML = '<img src="reload.png" alt="" class="rel">';
-    btSubmit.setAttribute('disabled', '');
-});
+// btSubmit.addEventListener('click', () => {
+// });
 
 form.addEventListener("submit", function (e) {
+    btSubmit.innerHTML = '<img src="reload.png" alt="" class="rel">';
+    btSubmit.setAttribute('disabled', '');
+    console.log('ok');
     e.preventDefault();
     const data = new FormData(form);
     const action = e.target.action;
