@@ -1,3 +1,15 @@
+body {
+  height: 100vh;
+  color: white;
+  background-color: rgb(35, 35, 35);
+}
+.dark-brown {
+  background-color: rgb(35, 35, 35);
+}
+.brown {
+  background-color: rgb(41, 37, 37);
+  /* justify-content: top; */
+}
 .container {
   width: 70%;
   margin: 0 auto;
@@ -29,6 +41,14 @@
 
 .bt-submit {
   display: none;
+}
+
+.contact-info button {
+  background: transparent;
+  border: 0;
+}
+.copy-button:hover {
+  cursor: pointer;
 }
 
 .rel {

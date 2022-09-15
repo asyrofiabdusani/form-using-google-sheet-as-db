@@ -1,4 +1,5 @@
 const form = document.getElementById("my-form");
+const nameUser = document.querySelector('#name');
 const hvPhoneBx = document.querySelector('.have-phone-box');
 const mnPetBx = document.querySelector('.many-pet-box');
 const kndPetBx = document.querySelector('.kind-pet-box');
@@ -38,6 +39,7 @@ hvPetYes.addEventListener('change', () => {
     phBrandIn.value = '';
     bstPhoneBx.style.display = 'none';
     bstPhone.value = '';
+    bstPhone.removeAttribute('required');
     btSubmit.style.display = 'none';
 });
 
@@ -55,6 +57,7 @@ hvPetNo.addEventListener('change', () => {
     kndOfPet.value = '';
     ptNameBx.style.display = 'none';
     petName.value = '';
+    petName.removeAttribute('required');
     btSubmit.style.display = 'none';
 });
 
@@ -65,6 +68,7 @@ mnPetIn.addEventListener('input', () => {
 petCheck.forEach(element => {
     element.addEventListener('change', () => {
         ptNameBx.style.display = 'block';
+        petName.setAttribute('required', '');
         if (petCheck[3].checked) {
             kndOfPetIn.setAttribute('type', 'text');
         }
@@ -101,15 +105,17 @@ hvPhNo.addEventListener('change', () => {
     phBrandIn.value = '';
     bstPhoneBx.style.display = 'none';
     bstPhone.value = '';
+    bstPhone.removeAttribute('required');
 });
 
 phCheck.forEach(element => {
     element.addEventListener('change', () => {
         bstPhoneBx.style.display = 'block';
+        bstPhone.setAttribute('required', '');
         if (phCheck[3].checked) {
             phBrandIn.setAttribute('type', 'text');
         }
-    })
+    });
 });
 
 bstPhone.addEventListener('input', () => {
@@ -127,13 +133,12 @@ bstPhone.addEventListener('input', () => {
     btSubmit.style.display = 'block';
 });
 
-// btSubmit.addEventListener('click', () => {
-// });
-
 form.addEventListener("submit", function (e) {
+    if ((nameUser.getAttribute('required') == '' && nameUser.value.length == 0) || (mnPetIn.getAttribute('required') == '' && mnPetIn.value.length == 0) || (petName.getAttribute('required') == '' && petName.value.length == 0) || (bstPhone.getAttribute('required') == '' && bstPhone.value.length == 0)) {
+        return false;
+    }
     btSubmit.innerHTML = '<img src="reload.png" alt="" class="rel">';
     btSubmit.setAttribute('disabled', '');
-    console.log('ok');
     e.preventDefault();
     const data = new FormData(form);
     const action = e.target.action;
